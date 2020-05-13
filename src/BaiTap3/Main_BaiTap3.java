@@ -10,9 +10,8 @@ package BaiTap3;
  * @author Administrator
  */
 public class Main_BaiTap3 {
-    public static void main(String[] args) {
-        
-        ShapeFactory sf = new ShapeFactory();
+    public static void main(String[] args) {   
+        ShapeFactory sf = ShapeFactory.createInstance();
         
         //Vẽ hình tròn
         Shape sp1 = sf.createShape(ShapeType.circle);
@@ -24,6 +23,6 @@ public class Main_BaiTap3 {
         
         //Vẽ hình tam giác
         Shape sp3 = sf.createShape(ShapeType.triangle);
-        System.out.println(sp3.draw());        
+        System.out.println(sp3.draw());
     }
 }

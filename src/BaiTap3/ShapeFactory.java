@@ -13,26 +13,33 @@ import static BaiTap3.ShapeType.triangle;
  *
  * @author Administrator
  */
-public class ShapeFactory extends Shape{
-
+public class ShapeFactory{
     
     public ShapeFactory() {
     }
 
-    public Shape createShape(ShapeType shapeType){
-        if(shapeType == circle)
-            return Circle.createInstance();
-        else if(shapeType == rectangle)
-            return Rectangle.createInstance();
-        else if(shapeType == triangle)
-            return Triangle.createInstance();
-        else
-            return null;
+    public static ShapeFactory getInstance() {
+        return instance;
     }
 
-    @Override
-    public String draw() {
-        return toString();
+    public static void setInstance(ShapeFactory instance) {
+        ShapeFactory.instance = instance;
+    }
+
+    public static ShapeFactory instance;
+    
+    public static ShapeFactory createInstance(){
+        if(instance == null)
+            instance = new ShapeFactory();
+        return instance;
     }
     
+    public Shape createShape(ShapeType shapeType){
+        switch(shapeType){
+            case circle : return new Circle();
+            case rectangle : return new Rectangle();
+            case triangle : return new Triangle();
+        }
+        return null;
+    }
 }

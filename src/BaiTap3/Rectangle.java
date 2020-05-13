@@ -11,17 +11,13 @@ package BaiTap3;
  */
 public class Rectangle extends Shape{
 
-    private static Rectangle rectangle;
-    
-    protected Rectangle() {
+    public Rectangle() {
     }
-    
-    public static Rectangle createInstance(){
-        if(rectangle == null)
-            rectangle = new Rectangle();
-        return rectangle;
+
+    public Rectangle(String brush, String paper, String frame) {
+        super(brush, paper, frame);
     }
-    
+
     @Override
     public String draw() {
         brush = brush + "Cọ vẽ";
@@ -29,7 +25,5 @@ public class Rectangle extends Shape{
         frame = frame + "Khuông hình chữ nhật";
         return "Chuẩn bị: " +brush + ", " + paper + ", " + frame + "\nBắt đầu vẽ hình chữ nhật\n";
     }
-    
-    
-    
+ 
 }

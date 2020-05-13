@@ -20,12 +20,14 @@ public class Main_BaiTap1 {
     public static void main(String[] args) throws ParseException {
         // TODO code application logic here
         
-        HoaDonHeader hoadonheader = new HoaDonHeader("HD001", new SimpleDateFormat("HH:mm:ss dd-MM-yyyy ").parse("8:10:15 01-01-2020 "), "Nguyen Thành Huynh");
+        HoaDonHeader hoadonheader = new HoaDonHeader("HD001", new SimpleDateFormat("HH:mm:ss dd-MM-yyyy ").parse("8:10:15 01-01-2020 "), "Nguyễn Thành Huynh");
         
+        //Danh sách chi tiết hóa đơn
         CTHD cthd1 = new CTHD("SP01", "Tivi_24Inch", 1, 5000000, 0.05f);
         CTHD ctdh2 = new CTHD("SP02", "Máy Giặt", 2, 8000000, 0.1f);
-        CTHD cthd3 = new CTHD("SP03", "Tủ Lạnh", 2, 1000000, 0.15f);
+        CTHD cthd3 = new CTHD("SP03", "Tủ Lạnh", 2, 1000000, 0.2f);
         
+        //In hóa đơn ra màn hình (Builder Pattern)
         HoaDon hd = new HoaDon.Builder()
                 .addHoaDonHeader(hoadonheader)
                 .addCTHD(cthd1)

@@ -11,15 +11,11 @@ package BaiTap3;
  */
 public class Circle extends Shape{
 
-    private static Circle circle;
-    
-    protected Circle(){   
+    public Circle() {
     }
-    
-    public static Circle createInstance(){
-        if(circle == null)
-            circle = new Circle();
-        return circle;
+
+    public Circle(String brush, String paper, String frame) {
+        super(brush, paper, frame);
     }
 
     @Override

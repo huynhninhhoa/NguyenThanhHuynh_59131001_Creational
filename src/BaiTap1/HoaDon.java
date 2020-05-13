@@ -24,7 +24,6 @@ public class HoaDon {
         this.ds = builder.ds;
     }
     
-    
     public static class Builder{
         HoaDonHeader hoadonheader;
         ArrayList<CTHD> ds = new ArrayList<>();
